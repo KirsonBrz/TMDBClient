@@ -1,7 +1,6 @@
 package com.kirson.tmdbclient.presentation.di.core
 
 import android.app.Application
-import android.content.Context
 import androidx.room.Room
 import com.kirson.tmdbclient.data.db.ArtistDAO
 import com.kirson.tmdbclient.data.db.MovieDAO
@@ -19,7 +18,7 @@ class DataBaseModule {
 
     @Singleton
     @Provides
-    fun provideMovieDataBase(app:Application): TMDBDatabase {
+    fun provideMovieDataBase(app: Application): TMDBDatabase {
         return Room.databaseBuilder(app.applicationContext, TMDBDatabase::class.java, "tmdbclient")
             .build()
     }
